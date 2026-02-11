@@ -294,8 +294,8 @@ class Disorder:
             # if several elements occupy the site, the average of the radiuses is taken
             # if oxidation state is non-integer, it is rounded to the smaller side to get the crystal radius
             for spec in species:
-                elem=spec.element
-                oxi=int(round(spec.oxi_state,0))
+                elem=spec.symbol # SUBSTITUTION 1 FROM .element
+                oxi=int(round(spec.oxi_state,0)) if hasattr(spec, 'oxi_state') else 0 # SUBSTITUTION 2
                 if str(elem) in self.list_el:
                     rs=self.radius.loc[self.radius['symbol']==str(elem)].loc[self.radius['charge']==oxi]['ionic radius'].values
                     if(len(rs)>0):
