@@ -1,0 +1,10 @@
+numpy==2.3.5
+matplotlib==3.10.8
+scipy==1.16.3
+pandas==2.3.3
+pymatgen==2025.10.7
+jupyter
+seaborn=0.13.2
+tdqm
+networks
+py7zr
